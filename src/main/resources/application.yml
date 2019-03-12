@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: hello-service
+server:
+  port: 8080
+management:
+   endpoint:
+      health:
+        show-details: "ALWAYS"
+      metrics :
+        enabled : true
+      prometheus : 
+        enabled : true
+   metrics :
+      export : 
+         prometheus : 
+           enabled : true
+           
+   endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: env,beans
